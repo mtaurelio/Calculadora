@@ -1,0 +1,40 @@
+html {
+  background-color: rgb(180, 214, 182);
+}
+
+body {
+  display: flex;
+  flex-direction: column; /** Organiza os elementos verticalmente*/
+  justify-content: space-between; /*Espaço entre o conteúdo e o rodapé*/
+  align-items: center; /* Centraliza horizontalmente */
+  min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+  margin: 0;
+  background: rgb(149, 185, 169);
+}
+
+.container-principal {
+  background: rgb(30, 83, 56);
+  padding: 100px; /** Largura total da caixa central*/
+  margin-top: 100px; /*Distancia do teto á caixa central*/
+  margin-bottom: 50px; /* Disancia do chão á caixa central*/
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* max-width: 100%; */
+}
+
+/* Estiliza todos os botões de números */
+button.botao {
+  background-color: #1c1c1c;
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  margin: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Efeito ao passar o mouse */
+button.botao:hover {
+  background-color: #333;
+}
