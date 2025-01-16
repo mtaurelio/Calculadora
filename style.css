@@ -1,40 +1,72 @@
-html {
-  background-color: rgb(180, 214, 182);
+/*Resetou os padroes do site*/
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column; /** Organiza os elementos verticalmente*/
-  justify-content: space-between; /*Espaço entre o conteúdo e o rodapé*/
-  align-items: center; /* Centraliza horizontalmente */
-  min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
-  margin: 0;
-  background: rgb(149, 185, 169);
+  background: linear-gradient(to right, #010935, #525584);
 }
 
+/* Alinhou a calculadora ao centro do site com a ajuda do grid-template*/
 .container-principal {
-  background: rgb(30, 83, 56);
-  padding: 100px; /** Largura total da caixa central*/
-  margin-top: 100px; /*Distancia do teto á caixa central*/
-  margin-bottom: 50px; /* Disancia do chão á caixa central*/
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* max-width: 100%; */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  /** Alinha os itens no centro do site */
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-/* Estiliza todos os botões de números */
-button.botao {
-  background-color: #1c1c1c;
-  color: white;
-  font-size: 24px;
-  border: none;
-  padding: 10px;
-  margin: 0px;
+/*Style botões*/
+.container-principal > button {
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: #eee;
 }
 
-/* Efeito ao passar o mouse */
-button.botao:hover {
-  background-color: #333;
+/* ao passar o cursor*/
+.container-principal > button:hover {
+  background-color: #eee;
+  color: #111;
+}
+
+/* Estilo dos operadores*/
+.container-principal > .operador {
+  background: #525584;
+}
+
+/*Espaçamento especial para operadores especificos*/
+.span-two {
+  grid-column: span 2;
+}
+
+/* Conteudo da calculadora */
+.container-principal > .conteudo {
+  grid-column: 1 / -1;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.container-principal > .conteudo > .operando {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.container-principal > .conteudo > .current {
+  color: white;
+  font-size: 2.5rem;
 }
